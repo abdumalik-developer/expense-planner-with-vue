@@ -10,105 +10,114 @@
 </head>
 
 <body class="bg-neutral-100 text-neutral-900 antialiased">
-    <div class="max-w-3xl mx-auto p-8">
-        <header class="mb-10">
-            <h1 class="text-3xl font-semibold tracking-tight mb-2">Expense Planner</h1>
-            <p class="text-sm text-neutral-500">Minimal, Notion‑like styling</p>
-        </header>
+    <div id="app">
+        <div class="max-w-3xl mx-auto p-8">
+            <header class="mb-10">
+                <h1 class="text-3xl font-semibold tracking-tight mb-2">Expense Planner</h1>
+                <p class="text-sm text-neutral-500">Minimal, Notion‑like styling</p>
+            </header>
 
 
-        <!-- summary cards -->
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            <div class="bg-white border border-neutral-200 p-5 rounded-xl shadow-sm">
-                <div class="text-xs uppercase tracking-wide text-neutral-500">Total Spent</div>
-                <div class="mt-2 text-2xl font-semibold">$1,234.56</div>
-            </div>
-            <div class="bg-white border border-neutral-200 p-5 rounded-xl shadow-sm">
-                <div class="text-xs uppercase tracking-wide text-neutral-500">This Month</div>
-                <div class="mt-2 text-2xl font-semibold">$423.00</div>
-            </div>
-            <div class="bg-white border border-neutral-200 p-5 rounded-xl shadow-sm">
-                <div class="text-xs uppercase tracking-wide text-neutral-500">Budget</div>
-                <div class="mt-2 text-2xl font-semibold">$1,500</div>
-            </div>
-        </section>
-
-
-        <!-- add expense form -->
-        <section class="bg-white border border-neutral-200 p-6 rounded-xl shadow-sm mb-10">
-            <h2 class="text-xl font-medium mb-4">Add Expense</h2>
-            <form method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                <div class="flex flex-col text-sm">
-                    <label class="mb-1 text-neutral-600">Date</label>
-                    <input type="date" name="date"
-                        class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400" />
+            <!-- summary cards -->
+            <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                <div class="bg-white border border-neutral-200 p-5 rounded-xl shadow-sm">
+                    <div class="text-xs uppercase tracking-wide text-neutral-500">Total Spent</div>
+                    <div class="mt-2 text-2xl font-semibold">$1,234.56</div>
                 </div>
-                <div class="flex flex-col text-sm sm:col-span-2">
-                    <label class="mb-1 text-neutral-600">Description</label>
-                    <input type="text" name="description" placeholder="Coffee, groceries, taxi..."
-                        class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400" />
+                <div class="bg-white border border-neutral-200 p-5 rounded-xl shadow-sm">
+                    <div class="text-xs uppercase tracking-wide text-neutral-500">This Month</div>
+                    <div class="mt-2 text-2xl font-semibold">$423.00</div>
                 </div>
-                <div class="flex flex-col text-sm">
-                    <label class="mb-1 text-neutral-600">Amount</label>
-                    <input type="number" step="0.01" name="amount" placeholder="0.00"
-                        class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400" />
+                <div class="bg-white border border-neutral-200 p-5 rounded-xl shadow-sm">
+                    <div class="text-xs uppercase tracking-wide text-neutral-500">Budget</div>
+                    <div class="mt-2 text-2xl font-semibold">$1,500</div>
                 </div>
-                <div class="flex flex-col text-sm sm:col-span-2">
-                    <label class="mb-1 text-neutral-600">Category</label>
-                    <select name="category"
-                        class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400">
-                        <option>Groceries</option>
-                        <option>Transport</option>
-                        <option>Dining</option>
-                        <option>Utilities</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="sm:col-span-2 flex items-end">
-                    <button type="submit"
-                        class="w-full py-2 rounded-md bg-neutral-900 text-white font-medium hover:bg-neutral-700">Add</button>
-                </div>
-                <div class="sm:col-span-2 flex items-end">
-                    <button type="reset"
-                        class="w-full py-2 rounded-md border border-neutral-300 hover:bg-neutral-50">Reset</button>
-                </div>
-            </form>
-        </section>
+            </section>
 
 
-        <!-- expenses table -->
-        <section class="bg-white border border-neutral-200 p-6 rounded-xl shadow-sm">
-            <h2 class="text-xl font-medium mb-4">Recent Expenses</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="text-xs uppercase tracking-wide text-neutral-500 border-b border-neutral-200">
-                            <th class="px-3 py-2 font-medium">Date</th>
-                            <th class="px-3 py-2 font-medium">Description</th>
-                            <th class="px-3 py-2 font-medium">Category</th>
-                            <th class="px-3 py-2 font-medium text-right">Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm divide-y divide-neutral-200">
-                        <tr>
-                            <td class="px-3 py-2">2025-09-10</td>
-                            <td class="px-3 py-2">Groceries</td>
-                            <td class="px-3 py-2">Groceries</td>
-                            <td class="px-3 py-2 text-right">$56.20</td>
-                        </tr>
-                        <tr class="font-medium bg-neutral-100">
-                            <td class="px-3 py-2" colspan="3">Total (sample)</td>
-                            <td class="px-3 py-2 text-right">$81.70</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            <!-- add expense form -->
+            <section class="bg-white border border-neutral-200 p-6 rounded-xl shadow-sm mb-10">
+                <h2 class="text-xl font-medium mb-4">Add Expense</h2>
+                <form method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                    <div class="flex flex-col text-sm">
+                        <label class="mb-1 text-neutral-600">Date</label>
+                        <input type="date" name="date"
+                            class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400" />
+                    </div>
+                    <div class="flex flex-col text-sm sm:col-span-2">
+                        <label class="mb-1 text-neutral-600">Description</label>
+                        <input type="text" name="description" placeholder="Coffee, groceries, taxi..."
+                            class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400" />
+                    </div>
+                    <div class="flex flex-col text-sm">
+                        <label class="mb-1 text-neutral-600">Amount</label>
+                        <input type="number" step="0.01" name="amount" placeholder="0.00"
+                            class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400" />
+                    </div>
+                    <div class="flex flex-col text-sm sm:col-span-2">
+                        <label class="mb-1 text-neutral-600">Category</label>
+                        <select name="category"
+                            class="px-3 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400">
+                            <option>Groceries</option>
+                            <option>Transport</option>
+                            <option>Dining</option>
+                            <option>Utilities</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2 flex items-end">
+                        <button type="submit"
+                            class="w-full py-2 rounded-md bg-neutral-900 text-white font-medium hover:bg-neutral-700">Add</button>
+                    </div>
+                    <div class="sm:col-span-2 flex items-end">
+                        <button type="reset"
+                            class="w-full py-2 rounded-md border border-neutral-300 hover:bg-neutral-50">Reset</button>
+                    </div>
+                </form>
+            </section>
 
 
-        <footer class="mt-10 text-center text-xs text-neutral-400">Built with Tailwind • Inspired by Notion style
-        </footer>
+            <!-- expenses table -->
+            <section class="bg-white border border-neutral-200 p-6 rounded-xl shadow-sm">
+                <h2 class="text-xl font-medium mb-4">Recent Expenses</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="text-xs uppercase tracking-wide text-neutral-500 border-b border-neutral-200">
+                                <th class="px-3 py-2 font-medium">Date</th>
+                                <th class="px-3 py-2 font-medium">Description</th>
+                                <th class="px-3 py-2 font-medium">Category</th>
+                                <th class="px-3 py-2 font-medium text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-neutral-200">
+                            <tr>
+                                <td class="px-3 py-2">2025-09-10</td>
+                                <td class="px-3 py-2">Groceries</td>
+                                <td class="px-3 py-2">Groceries</td>
+                                <td class="px-3 py-2 text-right">$56.20</td>
+                            </tr>
+                            <tr class="font-medium bg-neutral-100">
+                                <td class="px-3 py-2" colspan="3">Total (sample)</td>
+                                <td class="px-3 py-2 text-right">$81.70</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+            <footer class="mt-10 text-center text-xs text-neutral-400">Built with Tailwind • Inspired by Notion style
+            </footer>
+        </div>
     </div>
+
+    <script type="module">
+        import app from "./App.js";
+
+        Vue.createApp(app).mount("#app");
+    </script>
+
 </body>
 
 </html>
