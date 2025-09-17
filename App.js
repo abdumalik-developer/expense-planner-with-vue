@@ -1,8 +1,10 @@
 import AddExpenseForm from "./AddExpenseForm.js";
+import ExpensesTable from "./ExpensesTable.js";
 
 export default {
     components: {
-        AddExpenseForm
+        AddExpenseForm,
+        ExpensesTable
     },
     data() {
         return {
@@ -70,15 +72,8 @@ export default {
 
             this.expenses.push(expense);
 
-        },
-
-        getCategoryName( categoryId ){
-            return this.categories.find( item=>item.id === categoryId ).name;
-
-        },
-
+        }
         
-
     }
 
 }
